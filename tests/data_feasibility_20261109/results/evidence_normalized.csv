@@ -1,0 +1,11 @@
+test_id,data_source,api_endpoint,secid_or_symbol,request_param_lmt,request_param_period,test_env,status,http_status_code,actual_rows_returned,date_range_min,date_range_max,error_category,key_finding,notes
+1,eastmoney_fund_flow,push2his.eastmoney.com/api/qt/stock/fflow/daykline/get,0.300308 (中际旭创),120,day,cloud_vm,通过,200,120,2026-05-15,2026-11-09,,lmt=120返回120条约6个月,东财主力资金流日线
+2,eastmoney_fund_flow,push2his.eastmoney.com/api/qt/stock/fflow/daykline/get,0.300308 (中际旭创),500,day,cloud_vm,通过,200,121,2026-05-14,2026-11-09,,lmt=500仅返回121条仍约6个月,参数500不等于500日;窗口未显著扩大
+3,eastmoney_fund_flow,push2his.eastmoney.com/api/qt/stock/fflow/daykline/get,1.515050 (科创50ETF),120,day,cloud_vm,通过,200,120,2026-05-15,2026-11-09,,lmt=120返回120条,ETF同样接口
+4,eastmoney_fund_flow,push2his.eastmoney.com/api/qt/stock/fflow/daykline/get,1.515050 (科创50ETF),500,day,cloud_vm,通过,200,121,2026-05-14,2026-11-09,,lmt=500返回121条,ETF时间窗口与个股一致
+5,sse_etf_shares,query.sse.com.cn/commonQuery.do,515050,,,,失败,200,0,,,网络/DNS/TLS/HTTP,响应System Error Please try again later,JSONP格式返回错误;可能需特殊headers或鉴权
+6,sse_etf_shares,query.sse.com.cn/commonQuery.do,560780,,,,失败,200,0,,,网络/DNS/TLS/HTTP,响应System Error,同上
+7,csi_index_weights,www.csindex.com.cn/uploads/file/autofile/closeweight/000300closeweight.xls,000300 (沪深300),,,,失败,200,0,,,字段/日期覆盖,返回HTML而非Excel文件,URL可能已失效或需其他认证方式
+8,tencent_kline,web.ifzq.gtimg.cn/appstock/app/fqkline/get,sz300308,,day,cloud_vm,失败,200,0,,,字段/日期覆盖,返回param error,接口参数可能已变更或失效
+9,tencent_kline,web.ifzq.gtimg.cn/appstock/app/fqkline/get,sz300308,,week,cloud_vm,失败,200,0,,,字段/日期覆盖,返回param error,同上
+10,tencent_kline,web.ifzq.gtimg.cn/appstock/app/fqkline/get,sz300308,,month,cloud_vm,失败,200,0,,,字段/日期覆盖,返回param error,同上

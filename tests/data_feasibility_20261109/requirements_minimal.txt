@@ -1,0 +1,7 @@
+# 最小化依赖 - 用于独立数据可行性测试
+# 不依赖完整 vibe-astock 或 TradingAgents 环境
+
+requests>=2.31.0
+pandas>=2.0.0
+lxml>=4.9.0
+openpyxl>=3.1.0  # 用于读取Excel权重文件
